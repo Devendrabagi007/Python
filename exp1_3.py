@@ -75,13 +75,16 @@ while n >= 1:
     n = n - 1
     
 #4. Print Fibonacci Series up to n
-
-
-
-
-
-
-
+n=int(input("enter number n: "))
+i=0
+j=1
+sum=1
+while(sum<=n):
+    print(i)
+    c=i+j
+    i=j
+    j=c
+    sum+=1
 
     
 #5. Find the Factorial of a Given Number
