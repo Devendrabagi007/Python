@@ -315,3 +315,231 @@ if remove_book in books:
 
 print("Books:", books)
 print("Total Books:", len(books))
+
+#21.
+list1 = [10, 20, 30]
+list2 = [40, 50, 60]
+
+list3 = list1 + list2
+
+print("Merged list:", list3)
+
+#22.
+list1 = [10, 20, 30, 40]
+list2 = [30, 40, 50, 60]
+
+common = []
+
+for num in list1:
+    if num in list2:
+        common.append(num)
+
+print("Common elements:", common)
+
+#23.
+numbers = [10, 20, 10, 30, 20, 10]
+
+for num in numbers:
+    if num not in []:
+        count = numbers.count(num)
+        print(num, "appears", count, "times")
+
+#24.
+numbers = [10, 20, 30, 40, 50]
+
+left = numbers[1:] + numbers[:1]
+right = numbers[-1:] + numbers[:-1]
+
+print("Left rotation:", left)
+print("Right rotation:", right)
+
+#25.
+numbers = [10, 20, 10, 30, 20, 40, 30]
+
+unique = []
+
+for num in numbers:
+    if num not in unique:
+        unique.append(num)
+
+print("List without duplicates:", unique)
+
+#26.
+marks = [
+    70, 80, 65, 90, 55,
+    75, 85, 60, 95, 50,
+    72, 88, 68, 92, 78,
+    82, 64, 86, 74, 96
+]
+
+highest = marks[0]
+lowest = marks[0]
+total = 0
+
+for mark in marks:
+    if mark > highest:
+        highest = mark
+
+    if mark < lowest:
+        lowest = mark
+
+    total = total + mark
+
+average = total / len(marks)
+
+above = 0
+below = 0
+
+for mark in marks:
+    if mark > average:
+        above = above + 1
+    elif mark < average:
+        below = below + 1
+
+print("Highest marks:", highest)
+print("Lowest marks:", lowest)
+print("Average marks:", average)
+print("Students above average:", above)
+print("Students below average:", below)
+
+#27.
+salaries = [25000, 35000, 55000, 60000, 28000, 75000, 45000]
+
+highest = salaries[0]
+lowest = salaries[0]
+total = 0
+above_50000 = 0
+below_30000 = 0
+
+for salary in salaries:
+    if salary > highest:
+        highest = salary
+
+    if salary < lowest:
+        lowest = salary
+
+    total = total + salary
+
+    if salary > 50000:
+        above_50000 = above_50000 + 1
+
+    if salary < 30000:
+        below_30000 = below_30000 + 1
+
+average = total / len(salaries)
+
+print("Highest salary:", highest)
+print("Lowest salary:", lowest)
+print("Average salary:", average)
+print("Employees earning above 50000:", above_50000)
+print("Employees earning below 30000:", below_30000)
+
+#28.
+scores = [45, 100, 67, 120, 35, 55, 80, 10, 99, 150]
+
+highest = scores[0]
+lowest = scores[0]
+total = 0
+centuries = 0
+half_centuries = 0
+
+for score in scores:
+    if score > highest:
+        highest = score
+
+    if score < lowest:
+        lowest = score
+
+    total = total + score
+
+    if score >= 100:
+        centuries = centuries + 1
+
+    elif score >= 50:
+        half_centuries = half_centuries + 1
+
+average = total / len(scores)
+
+print("Highest score:", highest)
+print("Lowest score:", lowest)
+print("Total runs:", total)
+print("Average runs:", average)
+print("Centuries:", centuries)
+print("Half-centuries:", half_centuries)
+
+#29.
+temperatures = [
+    30, 32, 29, 35, 31, 33, 28, 34, 36, 30,
+    31, 37, 32, 29, 35, 33, 38, 30, 34, 31,
+    36, 32, 29, 35, 33, 37, 31, 34, 30, 36
+]
+
+hottest = temperatures[0]
+coldest = temperatures[0]
+total = 0
+
+for temp in temperatures:
+    if temp > hottest:
+        hottest = temp
+
+    if temp < coldest:
+        coldest = temp
+
+    total = total + temp
+
+average = total / len(temperatures)
+
+above = 0
+below = 0
+
+for temp in temperatures:
+    if temp > average:
+        above = above + 1
+    elif temp < average:
+        below = below + 1
+
+print("Hottest temperature:", hottest)
+print("Coldest temperature:", coldest)
+print("Average temperature:", average)
+print("Days above average:", above)
+print("Days below average:", below)
+
+#30.
+names = ["Amit", "Neha", "Rahul"]
+ages = [25, 30, 40]
+
+
+name = input("Enter patient name: ")
+age = int(input("Enter patient age: "))
+
+names.append(name)
+ages.append(age)
+
+
+search_name = input("Enter patient name to search: ")
+
+if search_name in names:
+    index = names.index(search_name)
+    print("Patient found")
+    print("Age:", ages[index])
+else:
+    print("Patient not found")
+
+
+delete_name = input("Enter patient name to delete: ")
+
+if delete_name in names:
+    index = names.index(delete_name)
+    names.pop(index)
+    ages.pop(index)
+    print("Patient deleted")
+else:
+    print("Patient not found")
+
+
+print("\nPatient Details:")
+
+for i in range(len(names)):
+    print("Name:", names[i], "Age:", ages[i])
+
+print("Total patients:", len(names))  
