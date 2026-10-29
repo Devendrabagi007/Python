@@ -45,7 +45,26 @@ print("Sum =", sum)
 
 #6.Write a PYTHON program to compute the cosine series cos(x) = 1 – x2 / 2! + x4 / 4! – x6 / 6! + … xn / n!
 
+x = float(input("Enter x in radians: "))
+n = int(input("Enter number of terms: "))
 
+total = 0
+
+for i in range(n):
+    power = 2 * i
+    fact = 1
+
+    for j in range(1, power + 1):
+        fact = fact * j
+
+    term = (x ** power) / fact
+
+    if i % 2 == 0:
+        total = total + term
+    else:
+        total = total - term
+
+print("Cosine value:", total)
 
 
 
@@ -82,79 +101,41 @@ for i in range(3):
     print()
 
 
-#9. Produce the Following Design
-#A
-#A B
-#A B C
-#A B C D
-#A B C D E
+#9.
+n = int(input("Enter n: "))
+
+for i in range(1, n + 1):
+    for j in range(i):
+        print(chr(65 + j), end=" ")
+    print()
 
 
+#10.
+n = int(input("Enter n: "))
+
+for i in range(n, 0, -1):
+    for j in range(i):
+        print(chr(65 + j), end=" ")
+    print()
 
 
+#11.
 
+n = int(input("Enter n: "))
 
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        print(j, end=" ")
+    print()
 
+#12.
+n = int(input("Enter n: "))
 
+for i in range(1, n + 1):
+    for j in range(i):
+        print(i, end=" ")
+    print()
 
-
-
-
-
-
-
-
-
-
-#10.10. Produce the Following Design
-#A B C D E
-#A B C D
-#A B C
-#A B
-#A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#11. Write a PYTHON program to produce following design
-#1
-#1 2
-#1 2 3
-#1 2 3 4
-#1 2 3 4 5
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-#12. Write a PYTHON program to produce following design
-#1
-#2 2
-#3 3 3
-#4 4 4 4 
-#5 5 5 5 5
 
     
 
